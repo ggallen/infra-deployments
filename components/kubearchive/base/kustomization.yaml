@@ -116,28 +116,7 @@ patches:
               securityContext:
                 readOnlyRootFilesystem: true
                 runAsNonRoot: true
-- patch: |-
-    apiVersion: apps/v1
-    kind: Deployment
-    metadata:
-      name: kubearchive-operator
-      namespace: kubearchive
-    spec:
-      template:
-        spec:
-          containers:
-            - name: manager
-              securityContext:
-                readOnlyRootFilesystem: true
-                runAsNonRoot: true
-              ports:
-                - containerPort: 8081
-              resources:
-                requests:
-                  memory: 256Mi
-                limits:
-                  memory: 256Mi
-                
+
 - patch: |-
     apiVersion: apps/v1
     kind: Deployment
